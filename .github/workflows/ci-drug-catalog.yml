@@ -1,22 +1,17 @@
 name: CI/CD — drug-catalog-service
 
-# Triggers on push to develop / release branches only.
-# Feature branches and PRs → ci-pr-drug-catalog.yml
-# PROD promotion → promote-prod.yml (workflow_dispatch)
-# Note: gitops uses "catalog-service" as the values file name for this service.
+
 
 on:
   push:
     branches: [main]
-    paths:
-      - 'drug-catalog-service/**'
-      - '.github/workflows/ci-drug-catalog.yml'
+
   workflow_dispatch:
     inputs:
       ref:
         description: 'Branch to build'
         required: false
-        default: 'develop'
+        default: 'main'
 
 permissions:
   id-token: write

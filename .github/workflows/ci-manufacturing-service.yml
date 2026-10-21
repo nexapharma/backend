@@ -1,8 +1,6 @@
 name: CI/CD — manufacturing-service
 
-# Triggers on push to develop / release branches only.
-# Feature branches and PRs → ci-pr-manufacturing-service.yml
-# PROD promotion → promote-prod.yml (workflow_dispatch)
+
 
 on:
   push:
@@ -13,7 +11,7 @@ on:
       ref:
         description: 'Branch to build'
         required: false
-        default: 'develop'
+        default: 'main'
 
 permissions:
   id-token: write

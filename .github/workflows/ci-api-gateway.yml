@@ -1,14 +1,5 @@
 name: CI/CD — api-gateway
 
-# Triggers on push to develop / release branches only.
-# Feature branches and PRs → ci-pr-api-gateway.yml
-#
-# Jobs:
-#   build       → Maven + SAST + Docker + ECR + Cosign
-#   deploy-dev  → direct commit to envs/dev/ → ArgoCD auto-syncs → smoke test
-#
-#
-# PROD promotion → promote-prod.yml (workflow_dispatch)
 
 on:
   push:
@@ -19,7 +10,7 @@ on:
       ref:
         description: 'Branch to build'
         required: false
-        default: 'develop'
+        default: 'main'
 
 permissions:
   id-token: write

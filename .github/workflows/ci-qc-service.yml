@@ -2,17 +2,15 @@ name: CI/CD — qc-service
 
 on:
   push:
-    branches: [develop, 'release/**']
-    paths:
-      - 'qc-service/**'
-      - '.github/workflows/ci-qc-service.yml'
+    branches: [main]
+
 
   workflow_dispatch:
     inputs:
       ref:
         description: 'Branch to build'
         required: false
-        default: 'develop'
+        default: 'main'
 
 permissions:
   id-token: write

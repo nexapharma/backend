@@ -41,7 +41,7 @@ jobs:
   deploy-dev:
     name: "🚀 Deploy api-gateway → DEV"
     needs: build
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     environment: dev
     steps:
       - uses: actions/checkout@v5
